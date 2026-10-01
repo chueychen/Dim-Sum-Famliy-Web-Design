@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+.big-four-intro {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.big-four-intro-title {
+    margin: 0 0 1rem;
+    color: var(--color-brand);
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.big-four-intro-title-chinese {
+    display: block;
+    font-size: 2.25rem;
+    font-style: normal;
+}
+
+.big-four-intro-text {
+    max-width: 50rem;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    text-align: left;
+}
+
+.big-four-dish-list {
+    display: grid;
+    gap: 4rem;
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.dish {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.dish-image {
+    width: 100%;
+    max-width: 20rem;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border: 0.125rem solid var(--color-brand);
+    border-radius: 1rem;
+    justify-self: center;
+}
+
+.dish-name {
+    margin: 0 0 1.5rem;
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: 2.25rem;
+    line-height: 1.2;
+}
+
+.dish-name-chinese {
+    margin-left: 0.25rem;
+    color: var(--color-brand);
+    font-size: 2rem;
+}
+
+.dish-intro {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+@media (min-width: 40rem) {
+    .big-four-intro-title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .dish {
+        grid-template-columns: 20rem 1fr;
+        align-items: center;
+        gap: 3rem;
+    }
+}
