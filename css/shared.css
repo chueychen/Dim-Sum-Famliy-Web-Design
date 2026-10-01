@@ -45,6 +45,12 @@ body {
     text-decoration: none;
 }
 
+.site-brand-chinese{
+    margin-left: 0.25rem;
+    color: var(--color-brand);
+    font-size: 1.75rem;
+}
+
 .site-nav-list {
     display: flex;
     gap: 0.5rem;
