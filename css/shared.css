@@ -91,6 +91,12 @@ body {
     font-style: italic;
 }
 
+.site-footer-tagline-chinese {
+    display: block;
+    font-size: 1.25rem;
+    font-style: italic;
+}
+
 .site-footer-credits {
     margin: 0;
     font-size: 0.875rem;
