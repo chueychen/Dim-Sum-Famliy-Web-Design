@@ -3,6 +3,7 @@
 :root {
     --color-brand: #8b6b4a;
     --color-brand-dark: #6f5439;
+    --color-brand-light: #f3ebe1;
     --color-surface: #ffffff;
     --color-page: #fbf7f1;
     --color-text: #000000;
@@ -17,6 +18,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+
 body {
     margin: 0;
     background-color: var(--color-page);
@@ -25,7 +31,19 @@ body {
     line-height: 1.5;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 0.1875rem solid var(--color-focus);
+    outline-offset: 0.125rem;
+}
+
 .site-header {
+    position:sticky;
+    top:0;
+    z-index: 10;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -51,27 +69,82 @@ body {
     font-size: 1.75rem;
 }
 
-.site-nav-list {
+.nav-list{
     display: flex;
-    gap: 0.5rem;
+    flex-direction: row;
+    gap:0.5rem;
     margin: 0;
     padding: 0;
-    list-style: none;
+    list-style-type: none;
 }
 
-.site-nav-link {
-    display: block;
+.nav-option{
+    position: relative;
+}
+
+.nav-name{
     padding: 0.5rem 1rem;
+    border: none;
     border-radius: 0.25rem;
     background-color: var(--color-brand);
     color: var(--color-surface);
+    font-family: inherit;
+    font-size: 1rem;
     font-weight: bold;
-    text-decoration: none;
+    cursor: pointer;
 }
 
-.site-nav-link:hover,
-.site-nav-link:focus-visible {
+.nav-name::after {
+    content: " ▾";
+}
+
+.nav-option:hover .nav-name,
+.nav-option:focus-within /.nav-name{
     background-color: var(--color-brand-dark);
+}
+
+.nav-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 12rem;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: var(--color-surface);
+    border-radius: 0.25rem;
+}
+
+.nav-option:last-child .nav-submenu {
+    left: auto;
+    right: 0;
+}
+
+.nav-option:hover .nav-submenu,
+.nav-option:focus-within .nav-submenu {
+    height: initial;
+    overflow: visible;
+    border: 0.125rem solid var(--color-brand);
+}
+ 
+.nav-submenu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--color-text);
+    text-decoration: none;
+}
+ 
+.nav-submenu a:hover,
+.nav-submenu a:focus-visible {
+    background-color: var(--color-brand-light);
+    color: var(--color-brand-dark);
+    text-decoration: underline;
+}
+ 
+.nav-submenu a:focus-visible {
+    outline-offset: -0.1875rem;
 }
 
 .site-footer {
@@ -106,6 +179,12 @@ body {
     margin: 0;
     color: var(--color-text-muted);
     font-size: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+    html {
+        scroll-padding-top: 6rem;
+    }
 }
 
 @media (min-width: 64rem) {
