@@ -217,10 +217,6 @@ textarea.form-input {
     cursor: pointer;
 }
 
-.form-area-choice .form-choice {
-    grid-template-columns: 9.5rem auto;
-}
-
 .form-choice-input {
     width: 1.25rem;
     height: 1.25rem;
@@ -299,7 +295,6 @@ textarea.form-input {
     }
 
     .form-area-choice .form-choice {
-        grid-template-columns: auto auto;
         margin-top: -1.5rem;
     }
 
