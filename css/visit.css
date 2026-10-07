@@ -5,78 +5,78 @@
     margin: 0 0 1rem;
     color: var(--color-brand);
     font-family: var(--font-display);
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-style: italic;
     line-height: 1.2;
     text-align: center;
 }
- 
+
 .visit-title-chinese,
 .reservation-title-chinese {
     display: block;
     font-size: 0.8em;
     font-style: normal;
 }
- 
+
 .visit {
     max-width: 64rem;
     margin: 0 auto;
     padding: 0 2rem 4rem;
 }
- 
+
 .visit-title {
     margin-bottom: 2rem;
 }
- 
+
 .visit-grid {
     display: grid;
     gap: 1.5rem;
 }
- 
+
 .visit-card {
     padding: 1.5rem;
     border: 0.125rem solid var(--color-brand);
     border-radius: 1rem;
     background-color: var(--color-surface);
 }
- 
+
 .visit-card-title {
     margin: 0 0 1rem;
     font-family: var(--font-display);
     font-size: 1.5rem;
     text-align: center;
 }
- 
+
 .visit-card-title-chinese {
     margin-left: 0.25rem;
     color: var(--color-brand);
     font-size: 0.8em;
 }
- 
+
 .visit-address {
     margin: 0 0 0.5rem;
     font-size: 1.125rem;
     font-style: normal;
     text-align: center;
 }
- 
+
 .visit-contact {
     margin: 0;
     text-align: center;
 }
- 
+
 .visit-contact-link {
     color: var(--color-brand-dark);
     font-weight: bold;
 }
- 
+
 .visit-note {
     margin: 1rem 0 0;
     color: var(--color-text-muted);
     font-size: 0.875rem;
     text-align: center;
 }
- 
+
 .hours-list {
     display: grid;
     gap: 0.25rem;
@@ -108,7 +108,7 @@
     margin: 0 auto;
     padding: 0 2rem 4rem;
 }
- 
+
 .reservation-intro {
     max-width: 36rem;
     margin: 0 auto 2rem;
@@ -119,13 +119,13 @@
 .reservation-form {
     --label-column: 15rem;
     --column-gap: 1rem;
- 
+
     display: grid;
     gap: 2rem;
     max-width: 48rem;
     margin: 0 auto;
 }
- 
+
 .form-section {
     display: grid;
     gap: 1.5rem;
@@ -136,12 +136,12 @@
     border-radius: 1rem;
     background-color: var(--color-surface);
 }
- 
+
 .form-section:focus-within {
     border-color: var(--color-brand-dark);
     background-color: var(--color-brand-light);
 }
- 
+
 .form-section-title {
     padding: 0 0.5rem;
     color: var(--color-brand);
@@ -149,22 +149,22 @@
     font-size: 1.375rem;
     font-weight: bold;
 }
- 
+
 
 .form-label {
     display: grid;
     gap: 0.375rem;
 }
- 
+
 .form-label-text {
     font-weight: bold;
 }
- 
+
 .form-hint {
     color: var(--color-text-muted);
     font-size: 0.875rem;
 }
- 
+
 .form-input {
     width: 100%;
     padding: 0.625rem 0.75rem;
@@ -175,11 +175,11 @@
     font-family: inherit;
     font-size: 1rem;
 }
- 
+
 .form-input:hover {
     border-color: var(--color-brand);
 }
- 
+
 textarea.form-input {
     resize: vertical;
 }
@@ -193,7 +193,7 @@ textarea.form-input {
 .form-input[type="date"]::-webkit-date-and-time-value {
     text-align: left;
 }
- 
+
 .form-area-choice {
     display: grid;
     gap: 0.5rem;
@@ -202,12 +202,12 @@ textarea.form-input {
     padding: 0;
     border: none;
 }
- 
+
 .form-area-choice .form-label-text {
     margin-bottom: 0.25rem;
     padding: 0;
 }
- 
+
 .form-choice {
     display: grid;
     grid-template-columns: auto auto;
@@ -216,11 +216,11 @@ textarea.form-input {
     column-gap: 0.75rem;
     cursor: pointer;
 }
- 
+
 .form-area-choice .form-choice {
     grid-template-columns: 9.5rem auto;
 }
- 
+
 .form-choice-input {
     width: 1.25rem;
     height: 1.25rem;
@@ -228,7 +228,7 @@ textarea.form-input {
     accent-color: var(--color-brand);
     cursor: pointer;
 }
- 
+
 .form-submit {
     width: 100%;
     padding: 0.875rem 2.5rem;
@@ -241,66 +241,80 @@ textarea.form-input {
     font-weight: bold;
     cursor: pointer;
 }
- 
+
 .form-submit:hover,
 .form-submit:focus-visible {
     background-color: var(--color-brand-dark);
 }
- 
+
 @media (min-width: 40rem) {
+
     .visit-title,
     .reservation-title {
         font-size: 3rem;
     }
 }
- 
+
 @media (min-width: 48rem) {
     .visit-grid {
         grid-template-columns: 1fr 1fr;
     }
- 
+
     .form-label {
         grid-template-columns: var(--label-column) 1fr;
         column-gap: var(--column-gap);
         align-items: baseline;
     }
- 
+
     .form-label-text {
         grid-column: 1;
         grid-row: 1;
         text-align: right;
     }
- 
+
     .form-input {
         grid-column: 2;
         grid-row: 1;
     }
- 
+
     .form-hint {
         grid-column: 2;
         grid-row: 2;
     }
- 
+
     .form-area-choice {
-        position: relative;
+        grid-template-columns: var(--label-column) max-content max-content;
+        column-gap: var(--column-gap);
     }
- 
-    .form-area-choice .form-choice {
-        margin-left: calc(var(--label-column) + var(--column-gap));
-    }
- 
+
     .form-area-choice .form-label-text {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: var(--label-column);
-        margin: 0;
+        margin-bottom: 0;
+        text-align: left;
     }
- 
-    .form-section > .form-choice {
+
+    .form-legend-text {
+        display: block;
+        text-align: right;
+    }
+
+    .form-area-choice .form-choice {
+        grid-template-columns: auto auto;
+        margin-top: -1.5rem;
+    }
+
+    .form-area-choice .form-choice:first-of-type {
+        grid-column: 2;
+    }
+
+    .form-area-choice .form-choice+.form-choice {
+        margin-left: 1.5rem;
+    }
+
+    .form-section>.form-choice {
         padding-left: calc(var(--label-column) + var(--column-gap));
     }
- 
+
     .form-submit {
         width: auto;
         justify-self: center;
@@ -324,4 +338,4 @@ textarea.form-input {
     .hours-time {
         grid-column: 2;
     }
-}    
+}

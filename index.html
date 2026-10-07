@@ -49,7 +49,8 @@
         </section>
 
         <section class="card-section" id="menu">
-            <h2 class="card-section-title">Our Menu <span class="card-section-title-chinese" lang="zh-Hans">菜单</span></h2>
+            <h2 class="card-section-title">Our Menu <span class="card-section-title-chinese" lang="zh-Hans">菜单</span>
+            </h2>
 
             <ul class="card-grid card-grid-dim-sum">
                 <li class="card">
@@ -176,7 +177,8 @@
                         888 H Street NW<br>
                         Washington, DC 20001
                     </address>
-                    <p class="visit-contact">Phone: <a class="visit-contact-link" href="tel:+12025550188">202-555-0188</a></p>
+                    <p class="visit-contact">Phone: <a class="visit-contact-link"
+                            href="tel:+12025550188">202-555-0188</a></p>
                     <p class="visit-note">In the heart of Chinatown, steps from Gallery Place–Chinatown Metro Station.
                     </p>
                 </section>
@@ -192,6 +194,7 @@
                         <dd class="hours-time"><span class="hours-days">Mon – Thu</span> 5:00 pm – 9:30 pm</dd>
                         <dd class="hours-time"><span class="hours-days">Fri – Sun</span> 5:00 pm – 10:30 pm</dd>
                     </dl>
+                    <p class="visit-note">Closed daily from 3:00 pm to 5:00 pm while we prepare for dinner.</p>
                 </section>
             </div>
         </section>
@@ -208,16 +211,14 @@
                     <legend class="form-section-title">Your Details</legend>
 
                     <label class="form-label">
-                        <span class="form-label-text">Full Name (Required) </span>
+                        <span class="form-label-text">Full Name (Required)</span>
                         <input class="form-input" type="text" name="guest-name" required />
                     </label>
 
                     <label class="form-label">
                         <span class="form-label-text">Phone Number (Required)</span>
                         <span class="form-hint">Format: 123-456-7890</span>
-                        <input class="form-input" type="tel" name="guest-phone"
-                            title="Format: 123-456-7890"
-                            required />
+                        <input class="form-input" type="tel" name="guest-phone" required />
                     </label>
 
                     <label class="form-label">
@@ -278,7 +279,8 @@
 
 
                     <fieldset class="form-area-choice">
-                        <legend class="form-label-text">Seating Area (Required)</legend>
+                        <legend class="form-label-text"><span class="form-legend-text">Seating Area (Required)</span>
+                        </legend>
                         <label class="form-choice">
                             <span class="form-choice-text">Main Dining Room</span>
                             <input class="form-choice-input" type="radio" name="seating-area" value="main-dining"
@@ -286,7 +288,7 @@
                         </label>
                         <label class="form-choice">
                             <span class="form-choice-text">Private Room</span>
-                            <input class="form-choice-input" type="radio" name="seating-area" value="private-room"/>
+                            <input class="form-choice-input" type="radio" name="seating-area" value="private-room" />
                         </label>
                     </fieldset>
                 </fieldset>
@@ -297,18 +299,18 @@
                     <label class="form-label">
                         <span class="form-label-text">Occasion (Optional)</span>
                         <span class="form-hint">e.g., birthday, anniversary, family reunion</span>
-                        <input class="form-input" type="text" name="occasion"/>
+                        <input class="form-input" type="text" name="occasion" />
                     </label>
 
                     <label class="form-label">
-                        <span class="form-label-text">Special Requests  (Optional)</span>
-                        <span class="form-hint">Allergies, high chairs, wheelchair access, etc.</span>
+                        <span class="form-label-text">Special Requests (Optional)</span>
+                        <span class="form-hint">e.g., allergies, high chairs, wheelchair access</span>
                         <textarea class="form-input" name="special-requests" rows="4"></textarea>
                     </label>
 
                     <label class="form-choice">
                         <span class="form-choice-text">Email me special offers and seasonal menus</span>
-                        <input class="form-choice-input" type="checkbox" name="newsletter-opt-in" value="yes" checked/>
+                        <input class="form-choice-input" type="checkbox" name="newsletter-opt-in" value="yes" checked />
                     </label>
                 </fieldset>
 
