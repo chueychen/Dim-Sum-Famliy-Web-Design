@@ -1,64 +1,70 @@
 # Dim Sum Family
 
-A two-page website introducing Cantonese dim sum, built with HTML and CSS only. No JavaScript and no external libraries.
+A single-page website for a Cantonese dim sum restaurant, built with HTML and CSS only. No JavaScript and no external libraries.
 
 **Live site:** https://chueychen.github.io/Dim-Sum-Famliy-Web-Design/
 
 ## About
 
-I'm a huge dim sum fan, so I built this website to introduce the family of Cantonese dim sum and the legendary "Big Four" of the tea house table. Dim sum originated in Guangdong, and its English names come directly from Cantonese pronunciation. That's why each dish on this site shows its Chinese name next to the English one, to help visitors understand where these dishes come from and the history behind them.
+I'm a huge dim sum fan, so I built this website for a fictional Cantonese tea house in Washington, DC's Chinatown. It introduces the families of dim sum and the legendary "Big Four" of the tea house table, shows the restaurant's location and opening hours, and lets visitors request a table through a reservation form. Dim sum originated in Guangdong, and its English names come directly from Cantonese pronunciation. That's why each dish on this site shows its Chinese name next to the English one, to help visitors understand where these dishes come from and the history behind them.
 
-## Pages
+## Page Sections
 
-**Home (`index.html`)** introduces the seven families of dim sum you'll find in a Cantonese tea house: Steamed Savories, Buns, Rice Rolls, Baked, Fried, Desserts, and Congee. The categories are shown as two rows of cards.
+**Hero** welcomes visitors with a short introduction and a "Reserve a Table" link that jumps to the reservation form.
 
-**The Big Four (`big-four.html`)** tells the story of the "Four Heavenly Kings" of dim sum (har gow, siu mai, char siu bao, and egg tart), a phrase Cantonese tea houses have used since the 1930s. Each dish has its own section with a photo and a description of how it's made and what makes a good one.
+**Our Menu** introduces the seven families of dim sum you'll find in a Cantonese tea house: Steamed Savories, Buns, Rice Rolls, Baked, Fried, Desserts, and Congee, shown as two rows of photo cards.
 
-The two pages link to each other through the navigation bar in the header, and the "Meet the Big Four" button on the homepage leads to the second page.
+**The Big Four** tells the story of the "Four Heavenly Kings" of dim sum (har gow, siu mai, char siu bao, and egg tart), a phrase Cantonese tea houses have used since the 1930s. Each dish has its own article with a photo and a description of how it's made and what makes a good one.
+
+**Visit Us** shows the restaurant's address, phone number, and opening hours for dim sum lunch and dinner.
+
+**Reservations** contains a form for booking a table, grouped into three sections: Your Details, Reservation Details, and Anything Else.
 
 ## Features
 
-- **Shared header and footer:** both pages use identical header and footer HTML, styled by a single shared stylesheet.
-- **Page-specific stylesheets:** each page loads its own CSS file for elements that are unique to it.
-- **12-column card grid:** the homepage has two card sections, one with 3 cards per row and one with 4 cards per row, both aligned to the same 12-column grid.
-- **Responsive design:** layouts adapt at rem-based breakpoints, from a single column on phones to multi-column layouts on wider screens.
+- **Sticky header with dropdown navigation:** the header stays visible while scrolling. The navigation has two menus, Our Food and Visit, each with a dropdown of links to sections on the page. The dropdowns open on hover and with keyboard focus using `:focus-within`, so they work without JavaScript.
+- **Reservation form:** submits to `/demonstration` using POST. It includes required and optional text fields, a phone field with a format hint, a date field, two select dropdowns, a radio group, and a pre-checked checkbox. Required fields are labeled with the word "Required" and enforced by the browser.
+- **Accessible labels:** every form field has an associated `<label>`, and related fields are grouped with `<fieldset>` and `<legend>`. Instructions such as the phone format are written inside the label.
+- **Two-column and one-column form layouts:** labels sit beside their fields on wider screens and above them on phones. Radio buttons and the checkbox always keep their text to the left of the input.
+- **Keyboard friendly:** the whole page, including the dropdown menus and the form, can be used with Tab, Shift+Tab, Enter, Space, and the arrow keys. Focus outlines are styled but never removed.
+- **12-column card grid:** the menu has two card rows, one with 3 cards and one with 4 cards, both aligned to the same 12-column grid.
 - **Bilingual headings:** headings and dish names include Simplified Chinese, marked with `lang="zh-Hans"`.
-- **Consistent theme:** colors and fonts are defined once as CSS custom properties in `:root`, so both pages share the same look and can be updated in one place.
+- **Consistent theme:** colors and fonts are defined once as CSS custom properties in `:root`, so the whole page shares the same look and can be updated in one place.
 
 ## Responsive Breakpoints
 
-| Screen width | Homepage cards | Big Four layout | Footer |
-|---|---|---|---|
-| Below 40rem | 1 card per row | Image above text | Single column |
-| 40rem to 48rem | 2 cards per row | Image above text | Single column |
-| 48rem to 64rem | 2 cards per row | Image left, text right | Single column |
-| 64rem and above | 3 per row / 4 per row | Image left, text right | Two columns |
+| Screen width | Menu cards | Big Four layout | Visit cards | Reservation form | Footer |
+|---|---|---|---|---|---|
+| Below 40rem | 1 per row | Image above text | Stacked | One column | Single column |
+| 40rem to 48rem | 2 per row | Image above text | Stacked | One column | Single column |
+| 48rem to 64rem | 2 per row | Image left, text right | Side by side | Two columns | Single column |
+| 64rem and above | 3 per row / 4 per row | Image left, text right | Side by side | Two columns | Two columns |
 
 ## Design Principles
 
-**Visual hierarchy:** heading sizes step down clearly from the page title to section headings, card titles, and Chinese subtitles. The page titles also use the brand color and italics to stand apart.
+**Visual hierarchy:** heading sizes step down clearly from the page title to section headings, dish names, and card titles at every screen width. Page and section titles also use the brand color and italics to stand apart. In the form, each fieldset legend is larger and set in the display font, while hints are smaller and gray.
 
-**Balance:** the homepage hero is centered and symmetrical. On the Big Four page, each section pairs a fixed-width photo on the left with a text block on the right, vertically centered so both sides carry similar visual weight.
+**Balance:** the hero is centered and symmetrical. In The Big Four section, each dish pairs a fixed-width photo on the left with a text block on the right, vertically centered so both sides carry similar visual weight.
 
-**Proximity:** related content sits close together and unrelated content is spaced apart. Each card keeps its photo and name tightly grouped, and on the Big Four page, the space between dishes is larger than the space within each one.
+**Proximity:** related content sits close together and unrelated content is spaced apart. Each card keeps its photo and name tightly grouped, and the space between Big Four dishes is larger than the space within each one. In the form, a label and its field are closer together than one field is to the next, and the three fieldsets are separated by even larger gaps. The fieldset being filled in is highlighted with `:focus-within`.
 
-**Emphasis:** the "Meet the Big Four" button is the only solid color block in the homepage content, drawing attention to the link to the second page. Chinese dish names use the brand color to stand out next to the black English names.
+**Emphasis:** the "Reserve a Table" link and the submit button are solid brand-color blocks, drawing attention to the main action of the page. Chinese dish names use the brand color to stand out next to the black English names.
 
 ## File Structure
 
 ```
 ├── index.html
-├── big-four.html
 ├── css/
-│   ├── shared.css      Header, footer, colors, fonts, and base styles
-│   ├── index.css       Homepage hero and card grid
-│   └── big-four.css    Big Four intro and dish sections
+│   ├── shared.css      Colors, fonts, base styles, header, navigation, and footer
+│   ├── index.css       Hero and menu card grid
+│   ├── big-four.css    The Big Four intro and dish articles
+│   └── visit.css       Visit Us section and reservation form
 └── images/
 ```
 
 ## Running Locally
 
-The site needs to be viewed through a web server rather than by opening the HTML file directly. With [Node.js](https://nodejs.org/) installed, run this in the project folder:
+The site should be viewed through a web server rather than by opening the HTML file directly, so that the form submits to `/demonstration` correctly. With [Node.js](https://nodejs.org/) installed, run this in the project folder:
 
 ```
 npx serve
@@ -68,10 +74,18 @@ Then open the address shown in the terminal, usually `http://localhost:3000`.
 
 On Windows PowerShell, if you see an error about running scripts being disabled, use `npx.cmd serve` instead.
 
+## Testing the Form
+
+Submitting the form returns a 404 error, which is expected because there is no server to receive the data. To confirm what was sent, open DevTools, go to the Network tab, turn on "Preserve log", submit the form, and select the `demonstration` request. The submitted fields appear under Payload. Remember to turn "Preserve log" off when you're done.
+
+## Known Limitation
+
+Because the dropdown menus are built with CSS only, on touch devices such as phones a menu may stay open after a link is tapped. Tapping anywhere else on the page closes it. Closing the menu automatically would require JavaScript, which this project does not use.
+
 ## Built With
 
 - HTML
-- CSS (Grid, Flexbox, custom properties, media queries)
+- CSS (Grid, Flexbox, custom properties, media queries, sticky positioning)
 
 ## Credits
 
